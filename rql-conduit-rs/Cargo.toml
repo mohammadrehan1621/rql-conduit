@@ -1,0 +1,26 @@
+[package]
+name = "rql-conduit-rs"
+version = "2.0.0"
+edition = "2021"
+authors = ["Mohammad Rehan <founder@rehanquantlab.com>"]
+description = "RQL Conduit — Bare-Metal Zero-Cloud Dual-WAN Socket Multiplexing Engine"
+license = "Apache-2.0 OR MIT"
+
+[dependencies]
+socket2 = "0.6"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[lib]
+name = "rql_conduit_core"
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "RQLConduit-Rust"
+path = "src/main.rs"

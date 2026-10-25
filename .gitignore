@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.spec
+build/
+dist/
+.pytest_cache/
+.vscode/
+.idea/
+target/
+rql-conduit-rs/target/
+*.pdb
